@@ -10,6 +10,7 @@
 - [Init Callback](./init.md)
 - [Click Callback](./click.md)
 - [Cancel Callback](./cancel.md)
-- [Shipping Callback](./callback.md)
+- [Shipping Callback](./shipping-callback.md)
+- [Code Callback](./code-callback.md)
 - [Validation](./validation.md)
 - [Returning User](./returning-user.md)

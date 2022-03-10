@@ -9,3 +9,5 @@
 - [onApprove:Subscription](./onApprove-subscription.md)
 - [onApprove:Auth](./onApprove-auth.md)
 - [onCancel:Auth](./onCancel-auth.md)
+- [onCodeEntered](./onCodeEntered.md)
+

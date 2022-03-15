@@ -1,8 +1,10 @@
 # JS SDK Initialization
 
-## Script Tag
+## Evergreen Script Tag
 
-- Load the SDK from `paypal.com/sdk/js?client-id=xyz`.
+We recommend the evergreen script tag for merchants to get the latest features and bug fixes.
+
+- Load the SDK from `paypal.com/sdk/js?client-id=xyz`
 - This provides the `window.paypal` namespace
 
 ```html
@@ -12,6 +14,25 @@
   paypal.Foo();
 </script>
 ```
+
+## Versioned Script Tag
+
+We also support pinning to a specific version by using the `version` query string parameter. Pinning to a specific version provides a deterministic sdk script. This does limit the functionality of the initial JS SDK script so there is an extra `loadSDKConfig()` step merchants will be required to do before rendering any components.
+
+<!-- the integrity attribute can be used to ensure the script contents have not changed -->
+<!-- https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity -->
+<script src="https://www.paypal.com/sdk/js?client-id=test&version=5.0.888" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="></script>
+
+<script>
+  // async call from the browser to graphql server to fetch required data (funding eligibility, edge cache config hashes)
+  await paypal.loadSDKConfig();
+  // now it's safe to use any component
+  paypal.Foo();
+</script>
+```
+
+TODO: document deprecation policy for this `version` query parameter.
+TODO: will we allow the merchant to host this versioned script themselves?
 
 ### Initialization Parameters
 
@@ -402,4 +423,3 @@ try {
   console.error(error);
 }
 ```
-

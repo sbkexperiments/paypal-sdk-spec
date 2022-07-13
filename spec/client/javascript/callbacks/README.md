@@ -1,5 +1,6 @@
 # Standard Callbacks
 
+- [getConfiguration](./getConfiguration.md)
 - [createOrder](./createOrder.md)
 - [createBillingAgreement](./createBillingAgreement.md)
 - [createSubscription](./createSubscription.md)
